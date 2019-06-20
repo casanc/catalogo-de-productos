@@ -7,17 +7,20 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 
 import { RouterModule, Routes } from '@angular/router';
+import { ShoppingBagComponent } from './components/shopping-bag/shopping-bag.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'shopping-bag', component: ShoppingBagComponent },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    ShoppingBagComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

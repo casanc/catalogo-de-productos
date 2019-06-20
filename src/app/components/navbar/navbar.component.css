@@ -1,0 +1,51 @@
+.navbar {
+    align-items: center;
+	align-content: stretch;
+    background-color: black;
+    display: flex;
+	flex-direction: row;
+    flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
+.appName {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.appName:hover {
+    color: lightgrey;
+}
+
+.searchContainer {
+    display: flex;
+    display: none;
+}
+
+.searchInput {
+    border: none;
+    border-radius: 100px 0px 0px 100px;
+    background-color: #fff;
+    margin-left: 8px;
+    padding: 5px 16px;
+}
+
+.searchButton {
+    border: none;
+    border-radius: 0px 100px 100px 0px;
+    background-color: #fff;
+    outline: none;
+    padding: 5px 16px;
+}
+
+.shoppingBag {
+    color: #fff;
+    font-size: 24px;
+}
+
+.shoppingBag:hover {
+    color: lightgray;
+    cursor: pointer;
+}

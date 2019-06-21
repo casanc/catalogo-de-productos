@@ -1,4 +1,5 @@
-<app-preloader></app-preloader>
-<p>
-  televisions works!
-</p>
+<app-preloader *ngIf="isEmpty; else elseBlock"></app-preloader>
+<ng-template #elseBlock>
+  <app-card class="d-flex flex-wrap justify-content-center" [products]="products">
+  </app-card>
+</ng-template>

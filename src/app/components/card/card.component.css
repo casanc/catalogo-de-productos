@@ -1,0 +1,17 @@
+.card {
+    margin: 10px 20px;
+}
+
+img {
+    height: 222px;
+    width: 222px;
+}
+
+h6.description {
+    color: gray;
+}
+
+h6.price {
+    color: black;
+    font-weight: bold;
+}

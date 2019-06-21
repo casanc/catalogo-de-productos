@@ -1,0 +1,8 @@
+<div class="card" *ngFor="let product of products;">
+  <img src="{{ product.miniature }}" class="card-img-top" alt="{{ product.description }}">
+  <div class="card-body">
+    <h6 class="description">{{ product.description }}</h6>
+    <h6 class="price">$ {{ product.price }}</h6>
+    <a href="#" class="btn btn-info btn-block">Agregar a la bolsa</a>
+  </div>
+</div>

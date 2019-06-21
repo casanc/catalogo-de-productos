@@ -14,6 +14,7 @@ import { AllComponent } from './components/home/sections/all/all.component';
 import { TelevisionsComponent } from './components/home/sections/televisions/televisions.component';
 import { SmartphonesComponent } from './components/home/sections/smartphones/smartphones.component';
 import { PreloaderComponent } from './components/preloader/preloader.component';
+import { CardComponent } from './components/card/card.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -34,6 +35,7 @@ const routes: Routes = [
     TelevisionsComponent,
     SmartphonesComponent,
     PreloaderComponent,
+    CardComponent,
   ],
   imports: [
     RouterModule.forRoot( routes ),

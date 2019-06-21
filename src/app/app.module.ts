@@ -13,6 +13,7 @@ import { ShoppingBagComponent } from './components/shopping-bag/shopping-bag.com
 import { AllComponent } from './components/home/sections/all/all.component';
 import { TelevisionsComponent } from './components/home/sections/televisions/televisions.component';
 import { SmartphonesComponent } from './components/home/sections/smartphones/smartphones.component';
+import { PreloaderComponent } from './components/preloader/preloader.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -32,6 +33,7 @@ const routes: Routes = [
     AllComponent,
     TelevisionsComponent,
     SmartphonesComponent,
+    PreloaderComponent,
   ],
   imports: [
     RouterModule.forRoot(

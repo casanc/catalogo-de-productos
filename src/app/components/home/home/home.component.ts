@@ -7,28 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  private home: boolean;
-  private televisions: boolean;
-  private all: boolean;
-  private smartphones: boolean;
-
   constructor() {
-    this.home = true;
-    this.televisions = false;
-    this.all = false;
-    this.smartphones = false;
     
   }
 
   ngOnInit() {
-  }
-
-  showSection(sectionName: string) {
-    console.log(sectionName)
-    if (sectionName == 'todos') {
-      this.all = true;
-      this.home = false;
-    }
   }
 
 }

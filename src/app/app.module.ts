@@ -1,12 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+
+import { GetProductService } from './services/product/get-product.service'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home/home.component';
-
-import { RouterModule, Routes } from '@angular/router';
 import { ShoppingBagComponent } from './components/shopping-bag/shopping-bag.component';
 import { AllComponent } from './components/home/sections/all/all.component';
 import { TelevisionsComponent } from './components/home/sections/televisions/televisions.component';
@@ -29,14 +31,22 @@ const routes: Routes = [
     ShoppingBagComponent,
     AllComponent,
     TelevisionsComponent,
-    SmartphonesComponent
+    SmartphonesComponent,
   ],
   imports: [
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(
+      routes,
+      { useHash: true },
+    ),
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    GetProductService,
+  ],
+  bootstrap: [
+    AppComponent,
+  ]
 })
 export class AppModule { }

@@ -1,8 +1,9 @@
-<div class="content">
-  <app-preloader></app-preloader>
-  <app-all>
-    <p>
-      all works!
-    </p>
-  </app-all>  
+<app-preloader *ngIf="isEmpty"></app-preloader>
+<!-- 
+<div *ngIf="condition; else elseBlock">
+  Content to render when condition is true.
 </div>
+<ng-template #elseBlock>
+  Content to render when condition is false.
+</ng-template>
+-->

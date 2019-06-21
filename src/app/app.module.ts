@@ -36,10 +36,7 @@ const routes: Routes = [
     PreloaderComponent,
   ],
   imports: [
-    RouterModule.forRoot(
-      routes,
-      { useHash: true },
-    ),
+    RouterModule.forRoot( routes ),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

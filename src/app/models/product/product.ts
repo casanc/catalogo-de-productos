@@ -9,59 +9,59 @@ export class Product {
 
     constructor() { }
 
-    getDescription(description) { 
+    setDescription(description) { 
         this.description = description;
     }
 
-    setDescription() { 
+    getDescription() { 
         return this.description;
     }
 
-    getInStock(inStock) { 
+    setInStock(inStock) { 
         this.inStock = inStock;
     }
 
-    setInStock() { 
+    getInStock() { 
         return this.inStock;
     }
 
-    getImg(img) { 
+    setImg(img) { 
         this.img = img;
     }
 
-    setImg() { 
+    getImg() { 
         return this.img;
     }
 
-    getMiniature(miniature) { 
+    setMiniature(miniature) { 
         this.miniature = miniature;
     }
 
-    setMiniature() { 
+    getMiniature() { 
         return this.miniature;
     }
 
-    getIdProduct(idProduct) { 
+    setIdProduct(idProduct) { 
         this.idProduct = idProduct;
     }
 
-    setIdProduct() { 
+    getIdProduct() { 
         return this.idProduct;
     }
 
-    getCategory(category) { 
+    setCategory(category) { 
         this.category = category;
     }
 
-    setCategory() { 
+    getCategory() { 
         return this.category;
     }
 
-    getPrice(price) { 
+    setPrice(price) { 
         this.price = price;
     }
 
-    setPrice() { 
+    getPrice() { 
         return this.price;
     }    
 }

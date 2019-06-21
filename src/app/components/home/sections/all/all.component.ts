@@ -32,20 +32,15 @@ export class AllComponent implements OnInit {
       }
       for (let i = 0; i < data.length; i ++) {
         this.product = new Product();
-        console.log(data[i]['idProducto']);
-        console.log(data[i]['descripcion']);
-        console.log(data[i]['cantidadDisponible']);
-        console.log(data[i]['imagen']);
-        console.log(data[i]['miniatura']);
-        console.log(data[i]['categoria']);
-        console.log(data[i]['precio']);
-        console.log('--------------------');
+        this.product.setIdProduct(data[i]['idProducto']);
+        this.product.setDescription(data[i]['descripcion']);
+        this.product.setInStock(data[i]['cantidadDisponible']);
+        this.product.setImg(data[i]['imagen']);
+        this.product.setMiniature(data[i]['miniatura']);
+        this.product.setCategory(data[i]['categoria']);
+        this.product.setPrice(data[i]['precio']);
+        this.products.push(this.product);
       }
     });
   }
-
-  getAllProducts() {
-    
-  }
-
 }

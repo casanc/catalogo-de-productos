@@ -1,5 +1,5 @@
-<app-preloader *ngIf="isEmpty; else elseBlock"></app-preloader>
-<ng-template #elseBlock>
+<app-preloader *ngIf="isEmpty; else showElements"></app-preloader>
+<ng-template #showElements>
   <app-card class="d-flex flex-wrap justify-content-center" [products]="products">
   </app-card>
 </ng-template>

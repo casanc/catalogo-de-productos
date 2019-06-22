@@ -1,7 +1,4 @@
-<div class="media" *ngFor="let product of products">
-  <img src="{{ product.miniature }}" class="mr-3" alt="{{ product.description }}">
-  <div class="media-body">
-    <h5 class="mt-0">{{ product.description }}</h5>
-    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-  </div>
-</div>
+<app-preloader *ngIf="isEmpty; else showElements"></app-preloader>
+<ng-template #showElements>
+  <app-list [products]="products"></app-list>
+</ng-template>

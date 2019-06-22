@@ -1,3 +1,36 @@
-<p>
-  list works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="list" *ngFor="let product of products">
+        <div class="list-item">
+          <img src="{{ product.miniature }}" alt="{{ product.description }}">
+        </div>
+        <div class="list-item">
+          <h6 class="list-item-content">{{ product.description }}</h6>
+        </div>
+        <div class="list-item">
+          <h5 class="list-item-content">$ {{ product.price }}</h5>
+        </div>
+        <div class="list-item">
+          <p class="list-item-content"><i class="far fa-trash-alt"></i></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="summary">
+        <div class="title">
+          <h4>Resumen tu orden</h4>
+        </div>
+        <div class="products" *ngFor="let product of products">
+          <span class="description">{{ product.description }}</span>
+          <span class="price">$ {{ product.price }}</span>
+        </div>
+        <div class="pay">
+          <span class="description">Total a pagar</span>
+          <span class="price"> XXXX </span>
+        </div>
+        <button type="button" class="btn btn-info btn-block">Pagar</button>
+      </div>
+    </div>
+  </div>
+</div>

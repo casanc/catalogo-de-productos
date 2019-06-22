@@ -1,0 +1,21 @@
+@media only screen and (max-width: 768px) {
+    app-list {
+        align-items: stretch;
+        align-content: stretch;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: stretch;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    app-list {
+        align-items: stretch;
+        align-content: stretch;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: stretch;
+    }
+}

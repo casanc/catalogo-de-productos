@@ -42,14 +42,10 @@ export class ShoppingBagService {
       return false;
     }
   }
-
+  
   getProducts(): Observable<Product[]> {
     return this.productsSubject.asObservable();
   }
-  
-  // getNumElements(): Observable<Product[]> {
-  //   return this.productsSubject.asObservable();
-  // }
 
   private refresh() {
     this.productsSubject.next(this.products);

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { ShoppingBagService } from '../../services/shopping-bag/shopping-bag.service'
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -9,13 +10,20 @@ import { ShoppingBagService } from '../../services/shopping-bag/shopping-bag.ser
 })
 export class NavbarComponent implements OnInit {
 
-  // @Input() numElementsInShoppingBag;
-  // private elementsInShoppingBag: number;
+  private responseService: Observable<any[]>;
+  private numElementsInShoppingBag;
 
-  constructor() { }
+  constructor(private shoppingBagService: ShoppingBagService) {
+    this.numElementsInShoppingBag = 0;
+  }
 
   ngOnInit() {
-   
+    this.responseService = this.shoppingBagService.getProducts();
+    this.responseService.pipe().subscribe( ( data ) => {
+      if (data.length !== 0) {
+        this.numElementsInShoppingBag = data.length;
+      }
+    });
   }
 
 }

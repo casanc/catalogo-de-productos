@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+
 import { ShoppingBagService } from 'src/app/services/shopping-bag/shopping-bag.service';
 import { Product } from 'src/app/models/product/product';
 

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { ShoppingBagService } from '../../services/shopping-bag/shopping-bag.service'
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  // @Input() numElementsInShoppingBag;
+  // private elementsInShoppingBag: number;
+
   constructor() { }
 
   ngOnInit() {
+   
   }
 
 }

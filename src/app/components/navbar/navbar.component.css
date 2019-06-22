@@ -51,3 +51,7 @@
     color: lightgray;
     cursor: pointer;
 }
+
+.badge {
+    vertical-align: top;
+}

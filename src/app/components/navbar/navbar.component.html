@@ -5,6 +5,11 @@
     <button class="searchButton" type="button"><i class="fas fa-search"></i></button>
   </div>
   <div class="shoppingBagContainer">
-    <a class="shoppingBag" routerLink="/shopping-bag"><i class="fas fa-shopping-bag"></i></a>
+    <a class="shoppingBag" routerLink="/shopping-bag">
+      <i class="fas fa-shopping-bag"></i>
+    </a>
+    <span class="badge badge-secondary">
+      {{ elementsInShoppingBag }}
+    </span>
   </div>
 </nav>

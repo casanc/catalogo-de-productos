@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { GetProductService } from './services/product/get-product.service'
+import { ShoppingBagService } from './services/shopping-bag/shopping-bag.service'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { TelevisionsComponent } from './components/home/sections/televisions/tel
 import { SmartphonesComponent } from './components/home/sections/smartphones/smartphones.component';
 import { PreloaderComponent } from './components/preloader/preloader.component';
 import { CardComponent } from './components/card/card.component';
+import { ListComponent } from './components/list/list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -36,6 +38,7 @@ const routes: Routes = [
     SmartphonesComponent,
     PreloaderComponent,
     CardComponent,
+    ListComponent,
   ],
   imports: [
     RouterModule.forRoot( routes ),
@@ -45,6 +48,7 @@ const routes: Routes = [
   ],
   providers: [
     GetProductService,
+    ShoppingBagService,
   ],
   bootstrap: [
     AppComponent,

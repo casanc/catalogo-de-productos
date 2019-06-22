@@ -40,7 +40,7 @@ export class ShoppingBagService {
     return this.productsSubject.asObservable();
   }
 
-  refresh(p: Array<Product>) {
+  private refresh(p: Array<Product>) {
     this.productsSubject.next(p);
     this.productsSubject.asObservable().share;
   }

@@ -19,35 +19,29 @@ export class ShoppingBagService {
 
   addElementToShoppingBag(product: Product): boolean {
     if (this.products.push(product)) {
-      this.refresh();
+      this.refresh(this.products);
       return true;
     } else {
       return false;
     }
   }
 
-  deleteElementToShoppingBag(product: Product): boolean {
-    if (this.products.length > 0) {
-      for (let index = 0; index < this.products.length; index++) {
-        if (this.products[index] == product) {
-          console.log('El producto esta en la lista');
-          return true;
-        } else {
-          console.log('El producto NO esta en la lista');
-          return false;
-        }
+  updateProducts(idProduct): Observable<Product[]> {
+    this.products.map( ( element, index ) => {
+      if (element.idProduct == idProduct) {
+        this.products.splice(index, 1);
       }
-    } else {
-      console.log('La lista esta vacia');
-      return false;
-    }
+    });
+    this.refresh(this.products);
+    return this.getProducts();
   }
-  
+
   getProducts(): Observable<Product[]> {
     return this.productsSubject.asObservable();
   }
 
-  private refresh() {
-    this.productsSubject.next(this.products);
+  refresh(p: Array<Product>) {
+    this.productsSubject.next(p);
+    this.productsSubject.asObservable().share;
   }
 }

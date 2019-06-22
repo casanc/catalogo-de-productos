@@ -20,7 +20,7 @@
     <div class="list-item-content">
       <p class="list-item-description">{{ product.description }}</p>
       <p class="list-item-price">$ {{ product.price }}</p>
-      <p class="list-item-icon">
+      <p class="list-item-icon" (click)="deleteElementShoppingBag(product.idProduct)">
         <i class="fas fa-times"></i>
       </p>
     </div>

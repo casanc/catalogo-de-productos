@@ -22,7 +22,9 @@ export class NavbarComponent implements OnInit {
     this.responseService.pipe().subscribe( ( data ) => {
       if (data.length !== 0) {
         this.numElementsInShoppingBag = data.length;
-      }
+      } else {
+        this.numElementsInShoppingBag = 0;
+      } 
     });
   }
 

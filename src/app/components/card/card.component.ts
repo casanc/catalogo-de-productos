@@ -11,7 +11,6 @@ import { ShoppingBagService } from 'src/app/services/shopping-bag/shopping-bag.s
 export class CardComponent implements OnInit {
 
   @Input() products: Array<Product>;
-  private prueba: Array<Product>;
 
   constructor(private shoppingBagService: ShoppingBagService) { }
 

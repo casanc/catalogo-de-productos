@@ -19,3 +19,16 @@
         justify-content: stretch;
     }
 }
+
+.orders {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: stretch;
+    align-content: stretch;
+    color: gray;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px;
+}

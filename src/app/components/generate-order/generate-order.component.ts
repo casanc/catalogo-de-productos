@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
+import { Product } from 'src/app/models/product/product';
+import { ShoppingBagService } from 'src/app/services/shopping-bag/shopping-bag.service';
 
 @Component({
   selector: 'app-generate-order',
@@ -17,10 +19,12 @@ export class GenerateOrderComponent implements OnInit {
   private bornDate: any;
   private city: any;
   private file: any;
+  products: Array<Product>;
 
   constructor(
     private formBuilder: FormBuilder,
-    private cookieService: CookieService 
+    private cookieService: CookieService,
+    private shoppingBagService: ShoppingBagService
     ) {
     this.generateOrderForm = formBuilder.group({
       'name': ['', Validators.required],
@@ -34,7 +38,8 @@ export class GenerateOrderComponent implements OnInit {
     this.bornDate = '';
     this.city = '';
     this.file = '';
-    this.infoOrder = [];//new Array<String>();
+    this.infoOrder = [];
+    this.products = [];
   }
 
   ngOnInit() {
@@ -58,5 +63,6 @@ export class GenerateOrderComponent implements OnInit {
     this.infoOrder.push( city );
     this.infoOrder.push( file.replace("C:\\fakepath\\", "") );
     this.cookieService.set( infoOrderKey, JSON.stringify( this.infoOrder), 1 );
+    this.shoppingBagService.refresh(this.products);
   }
 }

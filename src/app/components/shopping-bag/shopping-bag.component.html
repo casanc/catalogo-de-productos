@@ -1,1 +1,11 @@
 <app-list></app-list>
+<p class="orders">
+    <span>
+        Tienes {{ orders }}
+        <span *ngIf="orders == 1">orden</span>
+        <span *ngIf="orders > 1">ordenes</span>
+        pendiente
+    </span>
+    <button type="button" class="btn btn-info">Ver detalles</button>
+    <!-- <span>Ver detalles</span> -->
+</p>

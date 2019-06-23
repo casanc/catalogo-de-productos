@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { GetProductService } from './services/product/get-product.service'
 import { ShoppingBagService } from './services/shopping-bag/shopping-bag.service'
 
@@ -19,6 +19,7 @@ import { CardComponent } from './components/card/card.component';
 import { ListComponent } from './components/list/list.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { GenerateOrderComponent } from './components/generate-order/generate-order.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -27,9 +28,8 @@ const routes: Routes = [
   { path: 'home/televisions', component: TelevisionsComponent },
   { path: 'home/all', component: AllComponent },
   { path: 'home/smartphones', component: SmartphonesComponent },
-  // { path: 'home/televisions/product-details/:product', component: ProductDetailsComponent },
-  // { path: 'home/all/product-details/:product', component: ProductDetailsComponent },
   { path: 'product-details/:idProduct', component: ProductDetailsComponent },
+  { path: 'generate-order', component: GenerateOrderComponent },
   // { path: '**', component: PageNotFoundComponent },
 ];
 
@@ -47,12 +47,14 @@ const routes: Routes = [
     ListComponent,
     ProductDetailsComponent,
     PageNotFoundComponent,
+    GenerateOrderComponent,
   ],
   imports: [
     RouterModule.forRoot( routes ),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [
     GetProductService,

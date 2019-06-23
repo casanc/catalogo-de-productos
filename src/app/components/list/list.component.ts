@@ -4,6 +4,7 @@ import { Product } from 'src/app/models/product/product';
 import { Observable } from 'rxjs';
 import { ShoppingBagService } from 'src/app/services/shopping-bag/shopping-bag.service';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-list',
@@ -16,7 +17,11 @@ export class ListComponent implements OnInit {
   private responseService: Observable<any[]>;
   private totalPayment: number;
 
-  constructor(public router: Router, private shoppingBagService: ShoppingBagService) {
+  constructor(
+    public router: Router,
+    private shoppingBagService: ShoppingBagService,
+    private cookieService: CookieService
+    ) {
     this.totalPayment = 0;
   }
 
@@ -41,6 +46,22 @@ export class ListComponent implements OnInit {
     });
     if (this.products.length == 0) {
       this.totalPayment = 0;
+    }
+  }
+
+  saveProducts() {
+    if (this.cookieService.check('orders')) {
+      let counter = parseInt( this.cookieService.get( 'orders' ));
+      counter ++;
+      let orderKey = 'order' + counter;
+      let productKey = 'product' + counter;
+      this.cookieService.set( 'orders', counter + '', 1 );
+      this.cookieService.set( orderKey, counter + '', 1 );
+      this.cookieService.set( productKey, JSON.stringify(this.products), 1 );
+    } else {
+      this.cookieService.set( 'orders', '1', 1 );
+      this.cookieService.set( 'order1', '1', 1 );
+      this.cookieService.set( 'product1', JSON.stringify(this.products), 1 );
     }
   }
 }

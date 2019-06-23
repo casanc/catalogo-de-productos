@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
+
 import { GetProductService } from './services/product/get-product.service'
 import { ShoppingBagService } from './services/shopping-bag/shopping-bag.service'
 
@@ -55,10 +57,12 @@ const routes: Routes = [
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [
     GetProductService,
     ShoppingBagService,
+    CookieService,
   ],
   bootstrap: [
     AppComponent,

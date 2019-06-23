@@ -1,5 +1,6 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-generate-order',
@@ -11,8 +12,16 @@ export class GenerateOrderComponent implements OnInit {
   private generateOrderForm: FormGroup;
   private validFile: boolean;
   private showWarning: boolean;
+  private infoOrder: Array<String>;
+  private name: any;
+  private bornDate: any;
+  private city: any;
+  private file: any;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private cookieService: CookieService 
+    ) {
     this.generateOrderForm = formBuilder.group({
       'name': ['', Validators.required],
       'bornDate': ['', Validators.required],
@@ -21,6 +30,11 @@ export class GenerateOrderComponent implements OnInit {
     });
     this.validFile = false;
     this.showWarning = true;
+    this.name = '';
+    this.bornDate = '';
+    this.city = '';
+    this.file = '';
+    this.infoOrder = [];//new Array<String>();
   }
 
   ngOnInit() {
@@ -34,5 +48,15 @@ export class GenerateOrderComponent implements OnInit {
       this.validFile = true;
       this.showWarning = true;
     }
+  }
+
+  saveInfoOrder(name: string, date: string, city: string, file: string) {
+    let counter = parseInt( this.cookieService.get( 'orders' ));
+    let infoOrderKey = 'infoOrder' + counter;
+    this.infoOrder.push( name );
+    this.infoOrder.push( date );
+    this.infoOrder.push( city );
+    this.infoOrder.push( file.replace("C:\\fakepath\\", "") );
+    this.cookieService.set( infoOrderKey, JSON.stringify( this.infoOrder), 1 );
   }
 }

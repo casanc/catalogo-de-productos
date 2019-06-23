@@ -29,15 +29,15 @@ export class ProductDetailsComponent implements OnInit {
       if(params.has("idProduct")) {
         this.getProductService.getProducts().subscribe( ( products ) => {
           products.map( ( product ) => {
-            if(params.get("idProduct") == product.idProducto) {
+            if(params.get("idProduct") == product['idProducto']) {
               const p = new Product();
-              p.setIdProduct(product.idProducto);
-              p.setInStock(product.cantidadDisponible);
-              p.setCategory(product.categoria);
-              p.setDescription(product.descripcion);
-              p.setImg(product.imagen);
-              p.setMiniature(product.miniatura);
-              p.setPrice(product.precio);
+              p.setIdProduct(product['idProducto']);
+              p.setInStock(product['cantidadDisponible']);
+              p.setCategory(product['categoria']);
+              p.setDescription(product['descripcion']);
+              p.setImg(product['imagen']);
+              p.setMiniature(product['miniatura']);
+              p.setPrice(product['precio']);
               this.product = p;
             }
           });

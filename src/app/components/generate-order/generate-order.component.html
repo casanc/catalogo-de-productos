@@ -6,15 +6,15 @@
         <div class="form-row">
           <div class="col-12">
             <label for="name">Ingrese su nombre</label>
-            <input formControlName="name" type="text" class="form-control" placeholder="Nombre completo">
+            <input #name formControlName="name" type="text" class="form-control" placeholder="Nombre completo">
           </div>
           <div class="col-12">
             <label for="bornDate">Fecha de nacimiento</label>
-            <input formControlName="bornDate" id="date" type="date" class="form-control" placeholder="Fecha de nacimiento">
+            <input #bornDate formControlName="bornDate" name="date" type="date" class="form-control" placeholder="Fecha de nacimiento">
           </div>
           <div class="col-12">
             <label for="city">Ciudad</label>
-            <select class="custom-select custom-select-sm" formControlName="city">
+            <select #city name="city" class="custom-select custom-select-sm" formControlName="city">
               <option selected>Ciudad</option>
               <option value="Medellin">Medellín</option>
               <option value="Cali">Cali</option>
@@ -23,13 +23,15 @@
           </div>
           <div class="col-12">
             <label for="file">Fotocopia de su identificación</label>
-            <input type="file" class="form-control-file" formControlName="file" (change)="uploadFile($event)">
+            <input #file type="file" class="form-control-file" formControlName="file" (change)="uploadFile($event)">
           </div>
           <div class="col-12" *ngIf="!showWarning">
             <span class="warning">El peso de los archivos permitidos es máximo de 1MB</span>
           </div>
           <div class="col-12">
-            <button [disabled]="!generateOrderForm.valid || !validFile" class="btn btn-info btn-block" type="button">
+            <button [disabled]="!generateOrderForm.valid || !validFile" 
+            class="btn btn-info btn-block" type="button" routerLink="/home"
+            (click)="saveInfoOrder(name.value, bornDate.value, city.value, file.value)">
               Confirmar
             </button>
           </div>

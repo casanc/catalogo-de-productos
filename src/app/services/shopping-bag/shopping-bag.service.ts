@@ -19,7 +19,7 @@ export class ShoppingBagService {
 
   addElementToShoppingBag(product: Product): boolean {
     if (this.products.push(product)) {
-      this.refresh(this.products);
+        this.refresh(this.products);
       return true;
     } else {
       return false;
@@ -40,8 +40,8 @@ export class ShoppingBagService {
     return this.productsSubject.asObservable();
   }
 
-  private refresh(p: Array<Product>) {
-    this.productsSubject.next(p);
+  private refresh(productList: Array<Product>) {
+    this.productsSubject.next(productList);
     this.productsSubject.asObservable().share;
   }
 }

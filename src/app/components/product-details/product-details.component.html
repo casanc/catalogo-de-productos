@@ -1,0 +1,22 @@
+<div class="content">
+  <div class="image">
+    <h4 class="title">
+      {{ product.description }}
+    </h4>
+    <img src="{{ product.img }}" alt="{{ product.description }}">
+  </div>
+  <div class="description">
+    <p>
+      <span class="strong">$ {{ product.price }}</span>
+    </p>
+    <p>
+      <span class="strong">Categoria: </span>
+      <span>{{ product.category }}</span>
+    </p>
+    <p>
+      <span class="strong">Cantidad disponible: </span>
+      <span>{{ product.inStock }}</span>
+    </p>
+    <button (click)="setShoppingBag(product)" [disabled]="product.inStock > 0 ? false : true" type="button" class="btn btn-info">Agregar a la bolsa</button>
+  </div>
+</div>

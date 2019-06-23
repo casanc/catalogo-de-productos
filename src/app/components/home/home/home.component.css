@@ -46,6 +46,13 @@ a{
         height: 90vh;
         justify-content: center;
     }
+
+    .category {
+        border-style: solid;
+        border-width: 2px 0px 0px 0px;
+        display: flex;
+        flex: 3 1;
+    }
 }
  
 @media only screen and (min-width: 992px) {

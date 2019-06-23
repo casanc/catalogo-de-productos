@@ -1,0 +1,44 @@
+<div class="row" *ngIf="rows.length > 1">
+  <div class="col-sm-12 col-md-2"></div>
+  <div class="col-sm-12 col-md-8">
+    <label for="idOrder">Filtrar por número de orden</label>
+    <select (change)="idSelected($event.target.value)" class="form-control">
+      <option selected>Selecione uno</option>
+      <option *ngFor="let r of rows">{{ r.id }}</option>
+    </select>
+  </div>
+  <div class="col-sm-12 col-md-2"></div>
+</div>
+<div class="row" *ngIf="isEmpty">
+  <div class="col-sm-12 col-md-2"></div>
+  <div class="col-sm-12 col-md-8">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Productos</th>
+          <th scope="col">Contacto</th>
+          <th scope="col">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let r of rows">
+          <th scope="row">{{ r.id }}</th>
+          <td>{{ r.products }}</td>
+          <td>{{ r.receiver }} - {{ r.city }}</td>
+          <td> {{ r.cost }} </td>
+        </tr>
+      </tbody>
+    </table>
+    <button *ngIf="rows.length == 1" [routerLink]="['/orders-details', '']" type="button" class="btn btn-info">
+      Regresar
+    </button>
+    <button *ngIf="rows.length > 1" routerLink="/shopping-bag" type="button" class="btn btn-info">
+      Regresar
+    </button>
+  </div>
+  <div class="col-sm-12 col-md-2"></div>
+</div>
+<p *ngIf="!isEmpty">
+  No hay ordenes para mostrarte
+</p>

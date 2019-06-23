@@ -18,5 +18,9 @@
       <span>{{ product.inStock }}</span>
     </p>
     <button (click)="setShoppingBag(product)" [disabled]="product.inStock > 0 ? false : true" type="button" class="btn btn-info">Agregar a la bolsa</button>
+    <br><br>
+    <button routerLink="/" type="button" class="btn btn-info">
+      Regresar
+    </button>
   </div>
 </div>

@@ -21,7 +21,8 @@ import { CardComponent } from './components/card/card.component';
 import { ListComponent } from './components/list/list.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { GenerateOrderComponent } from './components/generate-order/generate-order.component'
+import { GenerateOrderComponent } from './components/generate-order/generate-order.component';
+import { OrdersDetailsComponent } from './components/orders-details/orders-details.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -32,7 +33,8 @@ const routes: Routes = [
   { path: 'home/smartphones', component: SmartphonesComponent },
   { path: 'product-details/:idProduct', component: ProductDetailsComponent },
   { path: 'generate-order', component: GenerateOrderComponent },
-  // { path: '**', component: PageNotFoundComponent },
+  { path: 'orders-details/:idOrder', component: OrdersDetailsComponent },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
@@ -50,6 +52,7 @@ const routes: Routes = [
     ProductDetailsComponent,
     PageNotFoundComponent,
     GenerateOrderComponent,
+    OrdersDetailsComponent,
   ],
   imports: [
     RouterModule.forRoot( routes ),

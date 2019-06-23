@@ -13,7 +13,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class ListComponent implements OnInit {
 
-  products: Array<Product>;
+  private products: Array<Product>;
   private responseService: Observable<any[]>;
   private totalPayment: number;
 

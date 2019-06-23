@@ -18,10 +18,8 @@ export class ShoppingBagComponent implements OnInit {
 
   ngOnInit() {
     if ( this.cookieService.check('orders') ) {
-      console.log('if');
       this.orders = parseInt( this.cookieService.get('orders') );
     } else {
-      console.log('else');
       this.orders = 0;
     }
   }

@@ -1,27 +1,39 @@
 # Enchufados
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
+Pequeña aplicación que presenta un catálogo de productos, el cual se obtiene de una API, brinda la opción de realizar un pedido de un producto a través de un formulario y persista los datos del pedido localmente, de modo que se puedan consultar los pedidos generados, también se debe poder filtrarlos por su identificador.
 
-## Development server
+## Dependencias del proyecto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Angular CLI en su versión 8.0.3.
+2. Repositorio del proyecto.
+3. Conexión a internet.
+4. Un navegador ( Chrome, Firefox, Opera ).
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Con que se construyo el proyecto
 
-## Build
+El proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3, para los estilos se uso CSS3 y [Boostrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/) en su version 4.3.1, los iconos se fueron tomados de [FontAwesome](https://fontawesome.com/) y [IconFinder](https://www.iconfinder.com/) todos en sus verisones gratuitas.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Como instalar el proyecto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clonar el repositorio del proyecto de GitHub https://github.com/casanc/enchufados.git
+2. Entrar a la carpeta del proyecto.
+3. En la carpeta del proyecto abrir una terminal.
+4. Ejecutar el comando `npm install` para instalar las dependencias del proyecto.
 
-## Running end-to-end tests
+## Como ejecutar el servidor de desarrollo
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+1. Entrar a la carpeta del proyecto.
+2. En la carpeta del proyecto abrir una terminal.
+3. Ejecutar el comando `ng serve -o`, este comando abrirá una ventana del navegador predeterminado con la url `http://localhost:4200/` en la cual se podrá hacer uso de todos los recursos del proyecto.
 
-## Further help
+## Como compilar el proyecto
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+1. Entrar a la carpeta del proyecto.
+2. En la carpeta del proyecto abrir una terminal.
+3. Ejecutar el comando `ng build`, todos los artefactos generados luego de la compilación quedara almacenados en el directorio `dist/`. Para habilitar el modo de producción al momento ce compilar el proyecto se debe usar el parametro o bandera `-prod`, es decir, `ng build -prod`
+
+## Ayuda
+
+Para obtener ayuda de Angular CLI ejecute el comando `ng help` o comunique sus inquietudes al correo camilosancheztobon@gmail.com

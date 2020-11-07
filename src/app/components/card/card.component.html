@@ -3,7 +3,7 @@
   <div class="card-body">
     <h6 [routerLink]="['/product-details', product.idProduct]" class="description">{{ product.description }}</h6>
     <h6 class="price">$ {{ product.price }}</h6>
-    <button (click)="setShoppingBag(product)" [disabled]="product.inStock > 0 ? false : true" type="button" class="btn btn-info btn-block">
+    <button id="add-shopping-bag" (click)="setShoppingBag(product)" [disabled]="product.inStock > 0 ? false : true" type="button" class="btn btn-info btn-block">
       Agregar a la bolsa
     </button> 
   </div>
